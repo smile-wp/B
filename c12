@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+ float pi=3.1415926,r=2.4,area;
+ area=pi * r * r * r;
+ printf("area=%f",area);
+return 0;
+	
+}

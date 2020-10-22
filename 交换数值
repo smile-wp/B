@@ -1,0 +1,11 @@
+int main ()
+{
+	int a,b,A;
+	scanf("%d%d",&a,&b);
+	printf(" a = %d\n, b = %d\n",a,b);
+	A = a + b;
+	a = A - a;
+	b = A - b;
+	printf("a = %d\n,b = %d\n",a,b);
+	return 0; 
+}

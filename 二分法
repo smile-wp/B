@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main()
+{
+    int a[10],kk,k=0;
+    int i;
+    for(i=0;i<10;++i)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&kk);
+    int l,r,m;
+    l=0;
+    r=9;
+    m=(l+r)/2;
+    while(l<=r)
+    {
+        m=(l+r)/2;
+        if(a[m]==kk)
+        {
+            k=1;
+            break;
+        }
+        if(a[m]>kk)
+        {
+            l=m+1;
+        }
+        else
+        {
+           r=m-1;
+        }
+    }
+    if(k==1)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include<stdio.h>
+int sxh(int x)
+   {
+     int t=x%10;
+     if(x<10)
+    {
+        return x*x*x;
+    }
+    return sxh(x/10)+t*t*t;
+   }
+
+int main()
+{
+    int a;
+    scanf("%d",&a);
+
+        if(sxh(a)==a)
+    {
+        printf("yes%d\n",a);
+    }
+    else{
+        printf("no%d\n",a);
+    }
+}

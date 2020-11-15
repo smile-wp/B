@@ -1,0 +1,36 @@
+//#include<cstdio>用scanf才用
+#include<cstring>
+#include<iostream>
+#include<string.h>
+#include<stack>
+//#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string a;
+    while(cin>>a)
+    {
+       stack<char>aa;
+       int n;
+       n=a.length();//计算字符串长度
+        int i;
+        for(i=0;i<n;i++)
+        {
+           if(a[i]=='(')
+            {
+               aa.push('(');
+            }
+        else if(a[i]==')')
+        {
+            aa.pop();
+        }
+        else
+           {
+            break;
+           }
+        }
+        cout<<aa.size()<<endl;
+
+      }
+
+}

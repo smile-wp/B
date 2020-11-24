@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+
+    int n=0,m=0,x=0;
+    char c;
+
+  while((c=getchar())!='\n')
+    {
+        if(c>='a'&&c<='z')
+            n++;
+        else if(c>='A'&&c<='Z')
+            m++;
+        else if(c==' ')
+            x++;
+
+    }
+    printf("小写%d\n大写%d\n空格%d\n字符数%d\n",n,m,x,m+n);
+    return 0;
+}

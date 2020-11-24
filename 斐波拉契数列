@@ -1,0 +1,25 @@
+#include<stdio.h>
+long Fib(int n)
+{
+    int a,b,sum=a=1;
+    while(n>2)
+    {
+        n--;
+        b=a;
+        a=sum;
+        sum=a+b;
+    }
+    return sum;
+}
+int main()
+{
+    int n,i,x;
+    printf("input n:");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        x=Fib(i);
+        printf("Fib(%d)=%d\n",i,x);
+    }
+    return 0;
+}

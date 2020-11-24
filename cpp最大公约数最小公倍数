@@ -1,0 +1,8 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    cout<<__gcd(24,12)<<endl;
+    cout<<4*6/__gcd(24,12);
+}

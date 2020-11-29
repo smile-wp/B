@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int ans=0;
+    while(n)
+    {
+        ans++;
+        if(judge(ans)==1)
+            n--;
+    }
+    printf("%d",ans);
+}
+    int judge(int n)
+   {
+    int ans=0;
+    while(n)
+    {
+
+    ans=ans+n%10;
+    n=n/10;
+    }
+    if(ans==10)
+        return 1;
+    else
+        return 0;
+
+   }
+
+
+

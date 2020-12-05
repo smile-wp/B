@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    int n,m;
+    int j;
+    scanf("%d %d",&n,&m);
+
+    if(n==m)
+    {
+        j=200;
+    }
+    else if(n/10==m%10&&n%10==m/10)
+    {
+        j=20;
+    }
+
+    else if(n/10==m%10||n%10==m/10||n/10==m/10||n%10==m%10)
+       {
+         j=2;
+       }
+       else
+       j=0;
+
+     printf("%d\n",j);
+}

@@ -1,0 +1,86 @@
+package ZLL;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class ZLL1 extends JFrame{//extends 继承
+	//成员变量
+	int x=10+(int)(Math.random()*600);
+	int y=10+(int)(Math.random()*600);
+	boolean flag = true;
+	ZLL1()throws MalformedURLException{//zll（）构造方法
+		this.setTitle("30s");//设置标题
+		this.setBounds(0,0,800,600);//设置起始位置和大小
+		this.setVisible(true);//设置是否可见
+		this.getContentPane().setBackground(Color.BLUE);//设置背景颜色
+		this.setResizable(false);//设置不能改变窗体大小
+		
+		ImageIcon ii = new ImageIcon("src/pp.jpg");//创建图片对象，读取图片
+		JLabel jl = new JLabel(ii);//创建JLabel放入图片
+		jl.setBounds(0, 0,800,600);//设置Label的位置和大小
+		this.getLayeredPane().add(jl);//在窗体容器中放置JLabel
+		
+		File f = new File("src/do.wav");
+		URI uri=f.toURI();
+		URL url=uri.toURL();
+		AudioClip ac=Applet.newAudioClip(url);
+		ac.play();
+	}
+	
+
+
+
+
+//main+alt+/        导包调用方法ctrl+alt+回车
+	public static void main(String[] args) throws MalformedURLException {
+	new ZLL1();	//调用构造方法
+	}
+	public void paint(Graphics g){
+		
+		Image i = this.createImage(800, 600);//创建图片大小
+		Graphics gps =i.getGraphics();//获取图片i的Graphics
+		gps.setColor(Color.BLACK);//设置图片为黑色
+		gps.fillRect(0, 0, 800, 600);
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image ss = tk.getImage(ZLL1.class.getResource("/ss.jpg"));
+		
+		gps.drawImage(ss, 10+(int)(Math.random()*600), 10+(int)(Math.random()*600),null);
+		g.drawImage(i, 0, 0,null);
+		
+		if(flag){
+			x++;
+			y++;
+		}else{
+			x--;
+			y--;
+		}
+		
+		if(x>700||y>500){
+			flag = false;
+		}
+		if(x<0||y<0){
+			flag = true;
+		}		
+		//绘图
+		System.out.println("x:+x  y:+y");
+		this.repaint();//重绘
+		try {
+			Thread.sleep(10);//休眠10毫秒
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
